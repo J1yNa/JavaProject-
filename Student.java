@@ -1,34 +1,35 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 public class Student {
-    private String name;
-    private int studentId;
+    String name;
+    int studentId;
 
-    public Student(String var1, int var2) {
-        this.name = var1;
-        this.studentId = var2;
+    public Student() {
+        this.name = "Unknown";
+        this.studentId = 0;
     }
 
-    public String getName() {
-        return this.name;
+    public Student(String name, int studentId) {
+        this.name = name;
+        this.studentId = studentId;
     }
 
-    public void setName(String var1) {
-        this.name = var1;
+    // Метод для вывода данных
+    public void printInfo() {
+        System.out.println("Студент: " + name);
+        System.out.println("ID: " + studentId);
     }
 
-    public int getStudentId() {
-        return this.studentId;
+    // Метод для изменения имени
+    public void updateName(String newName) {
+        String oldName = this.name;
+        this.name = newName;
+        System.out.println("Имя изменено: " + oldName + " -> " + newName);
     }
 
-    public void setStudentId(int var1) {
-        this.studentId = var1;
-    }
+    public String getName() { return name; }
+    public int getStudentId() { return studentId; }
 
+    @Override
     public String toString() {
-        return "Student{name='" + this.name + "', studentId=" + this.studentId + "}";
+        return name + "," + studentId;
     }
 }
